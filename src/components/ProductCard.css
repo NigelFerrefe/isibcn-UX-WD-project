@@ -1,0 +1,15 @@
+.container-card {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+}
+.process-imgs {
+    border: 1px solid red;
+    display: flex;
+    flex-direction: row;
+}
+.container-btns {
+    border: 1px solid green;
+    display: flex;
+    flex-direction: row;
+}
