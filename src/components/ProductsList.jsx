@@ -4,15 +4,16 @@ import ProductsCard from "./ProductCard";
 function ProductsList() {
   return (
     <>
-      <section>
-        <ul>
+      <div className="container-products">
+        <h1>NUESTROS PRODUCTOS</h1>
+        <section>
           {jewelsData.map((jewel) => (
-            <li key={jewel.id}>
+            <article key={jewel.id}>
                 <ProductsCard jewel={jewel}/>
-            </li>
+            </article>
           ))}
-        </ul>
-      </section>
+        </section>
+      </div>
     </>
   );
 }
