@@ -1,0 +1,12 @@
+.footer {
+    flex-direction: column;
+  background-color: #ebe5df;
+  --color-title: #8a6e4e;
+  --color-subtitle: #503f2b;
+  --color-text: #000;
+  --font-primary: "Inter", sans-serif;
+  --font-secondary: "DM Sans", sans-serif;
+  text-align: center;
+}
+}
+
