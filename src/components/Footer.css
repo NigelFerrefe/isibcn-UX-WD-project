@@ -1,12 +1,18 @@
 .footer {
     flex-direction: column;
+    font-family: "Inter", sans-serif, "DM Sans";
   background-color: #ebe5df;
   --color-title: #8a6e4e;
   --color-subtitle: #503f2b;
   --color-text: #000;
-  --font-primary: "Inter", sans-serif;
-  --font-secondary: "DM Sans", sans-serif;
   text-align: center;
 }
+
+
+.developed {
+    text-align: left;
+    padding-left: 2rem;
+    padding-bottom: 2rem;
 }
+
 

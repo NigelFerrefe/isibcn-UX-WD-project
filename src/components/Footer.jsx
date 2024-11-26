@@ -37,7 +37,7 @@ function Footer() {
               <a href="mailto:info@isi-bcn.com">info@isi-bcn.com</a>
             <br />
             </div>
-            <p>Developed by</p>
+            <p className="developed">Developed by</p>
           </div>
         </div>
       </footer>

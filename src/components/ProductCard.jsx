@@ -1,10 +1,24 @@
 import { useState } from "react";
-import "./ProductCard.css"
+import "./ProductCard.css";
 function ProductsCard({ jewel: { name, price, description } }) {
   const [number, setNumber] = useState(0);
+  const [addChart, setAddChart] = useState();
+  const [toggleText, setToggleText] = useState("AÑADIR EN EL CARRITO");
 
   const handleIncrement = () => setNumber(number + 1);
+
   const handleDecrement = () => setNumber(number - 1);
+  const handleAddChart = () => {
+    if (addChart) {
+      setAddChart(false);
+      setToggleText("AÑADIR EN EL CARRITO");
+      console.log("Product deleted to chart list");
+    } else {
+      setAddChart(true);
+      setToggleText("EN EL CARRITO");
+      console.log("Product added to chart list");
+    }
+  };
 
   return (
     <article className="container-card">
@@ -25,7 +39,9 @@ function ProductsCard({ jewel: { name, price, description } }) {
         <button onClick={handleIncrement}>+</button>
       </div>
       <div>
-        <button className="add-chart">Añadir al carrito</button>
+        <button className="add-chart" onClick={handleAddChart}>
+          {toggleText}
+        </button>
       </div>
     </article>
   );
