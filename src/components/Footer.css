@@ -14,7 +14,6 @@ a {
     color: black;
 }
 
-<<<<<<< HEAD
 .call-icon {
     vertical-align: middle;
 }
@@ -25,9 +24,6 @@ a {
 
 
 .email {
-=======
-.mail-container {
->>>>>>> 76994f81608d48eeefaca0babd4277e9dd02ea24
     text-decoration: underline;
     color: black;
     font-size: 12px;
@@ -49,16 +45,6 @@ p, a {
     font-size: 12px;
 }
 
-<<<<<<< HEAD
 .tienda-sarria-link{
     color: black;
 }
-=======
-.call-icon{
-    vertical-align: middle;
-}
-
-.mail-icon {
-    vertical-align: middle;
-}
->>>>>>> 76994f81608d48eeefaca0babd4277e9dd02ea24
