@@ -9,7 +9,7 @@
 }
 
 
-.mail-icon {
+.mail-container {
     text-decoration: underline;
     color: black;
     font-size: 12px;
@@ -31,3 +31,10 @@ p {
     font-size: 12px;
 }
 
+.call-icon{
+    vertical-align: middle;
+}
+
+.mail-icon {
+    vertical-align: middle;
+}

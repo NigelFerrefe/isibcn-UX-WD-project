@@ -39,7 +39,7 @@ function Footer() {
                 
               <p><img className="call-icon" src={callpic} alt="" />+34 656 316 346</p>
               <br />
-              <a className="mail-icon" href="mailto:info@isi-bcn.com"><img src={mailpic} alt="" />info@isi-bcn.com</a>
+              <a className="mail-container" href="mailto:info@isi-bcn.com"><img className="mail-icon" src={mailpic} alt="" />info@isi-bcn.com</a>
             <br />
             </div>
             <p className="developed">Developed by</p>
