@@ -1,4 +1,6 @@
 import "./Footer.css";
+import  callpic from "../assets/call.png"
+import mailpic from "../assets/mail.png"
 function Footer() {
   return (
     <>
@@ -34,9 +36,10 @@ function Footer() {
             <div className="contact-container">
               <h3>Contacto</h3>
               <br />
-              <p>+34 656 316 346</p>
+                
+              <p><img className="call-icon" src={callpic} alt="" />+34 656 316 346</p>
               <br />
-              <a className="mail" href="mailto:info@isi-bcn.com">info@isi-bcn.com</a>
+              <a className="mail-icon" href="mailto:info@isi-bcn.com"><img src={mailpic} alt="" />info@isi-bcn.com</a>
             <br />
             </div>
             <p className="developed">Developed by</p>
