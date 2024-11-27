@@ -21,7 +21,7 @@ const jewelsData = [
   {
     id: 1,
     name: "Anillo Flash",
-    main_image: redRingImage,
+    main_image: [redRingImage,],
     price: 43,
     images: [
       redRingProcess1,
