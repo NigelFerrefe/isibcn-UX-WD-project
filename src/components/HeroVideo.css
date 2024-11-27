@@ -3,47 +3,60 @@
     height: 90vh; 
     width: 100%;
     overflow: hidden;
-  }
-  
-  .hero-video {
+}
+
+.scroll-button {
+    display: none;
+}
+
+.hero-video {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100%; 
     object-fit: cover; 
-    transform: scale(1.15); 
     object-position: center;
     z-index: -1; 
-  }
-  
-  .scroll-button {
-    position: absolute;
-    bottom: 3rem;
-    left: 50%;
-    transform: translateX(-50%);
-    background: none;
-    border: none;
-    cursor: pointer;
-    outline: none;
-    z-index: 10; 
-    animation: bounce 2s infinite; 
-  }
-  
-  .scroll-button img {
-    width: 3.5rem; 
-    height: auto;
-  }
-  
-  @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-      transform: translate(-50%, 0);
+}
+
+@media (max-width: 430px) {
+    .hero-container {
+        height: 90vh; 
     }
-    40% {
-      transform: translate(-50%, -10px);
+
+    .hero-video {
+        transform: scale(1.15); 
     }
-    60% {
-      transform: translate(-50%, -5px);
+
+    .scroll-button {
+        position: absolute;
+        display: block;
+        bottom: 7rem;
+        left: 50%;
+        transform: translateX(-50%);
+        background: none;
+        border: none;
+        cursor: pointer;
+        outline: none;
+        z-index: 10;
+        animation: bounce 2s infinite;
     }
-  }
-  
+
+    .scroll-button img {
+        width: 3.5rem;
+        height: auto;
+    }
+
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            transform: translate(-50%, 0);
+        }
+        40% {
+            transform: translate(-50%, -10px);
+        }
+        60% {
+            transform: translate(-50%, -5px);
+        }
+    }
+}
