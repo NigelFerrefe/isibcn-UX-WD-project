@@ -1,12 +1,14 @@
 import "./Navbar.css";
+import logo from "../assets/LOGO.svg"
+import emptyBagIcon from "../assets/EMPTYBAG.svg"
 
 
 function Navbar() {
     return (
         <nav>
-            <img className="logo" src="src/assets/LOGO.svg" alt="isibcn logo" />
+            <img className="logo" src={logo} alt="isibcn logo" />
             <div className="nav-icons">
-                <img src="src/assets/EMPTYBAG.svg" alt="empty bag icon" />
+                <img src={emptyBagIcon} alt="empty bag icon" />
             </div>
         </nav>
         
