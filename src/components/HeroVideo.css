@@ -19,7 +19,7 @@
   
   .scroll-button {
     position: absolute;
-    bottom: 3got rem;
+    bottom: 3rem;
     left: 50%;
     transform: translateX(-50%);
     background: none;
@@ -31,7 +31,7 @@
   }
   
   .scroll-button img {
-    width: 40px; 
+    width: 3.5rem; 
     height: auto;
   }
   
