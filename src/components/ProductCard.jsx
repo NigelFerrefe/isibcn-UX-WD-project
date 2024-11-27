@@ -42,8 +42,8 @@ function ProductsCard({
       </div>
 
       <div className="carousel-buttons">
-        <button onClick={handlePrev}>Siguiente</button>
-        <button onClick={handleNext}>Anterior</button>
+        <button onClick={handlePrev}>Anterior</button>
+        <button onClick={handleNext}>Siguiente</button>
       </div>
 
       {/*<img className="main-image" src={main_image} alt="main image" />*/}
