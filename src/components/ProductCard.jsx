@@ -31,7 +31,20 @@ function ProductsCard({
   };
 
   return (
+    
+
     <article className="container-card">
+      <div className="carousel">
+        {images.map((image, index) => (
+          <img
+          className="carousel-ring"
+          key={index}
+          src={main_image}
+          alt={`${image} carousel`}/>
+        ) 
+      )}
+      </div>
+
       <img className="main-image" src={main_image} alt="main image" />
       <div className="container-details">
         <h4>{name}</h4>

@@ -16,6 +16,7 @@ import ringProcess1 from "../assets/Ring-1.png";
 import ringProcess2 from "../assets/Ring-2.png";
 import ringProcess3 from "../assets/Ring-3.png";
 import ringProcess4 from "../assets/Ring-4.png";
+import 
 import rings from "../assets/3rings.png";
 import bracelet2 from "../assets/bracelet2.png";
 import bracelet3 from "../assets/bracelet3.png";
@@ -29,7 +30,7 @@ const jewelsData = [
   {
     id: 1,
     name: "Anillo Flash",
-    main_image: [redRingImage, ring, rings],
+    main_image: redRingImage,
     price: 43,
     images: [
       redRingProcess1,
