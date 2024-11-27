@@ -16,13 +16,13 @@
 
 .carousel {
   display: flex;
-  overflow-x: auto; /* Allows horizontal scrolling */
+  overflow-x: auto; 
   scroll-behavior: smooth;
-  gap: 1rem; /* Add a small gap between images */
+  gap: 1rem;
 }
 
 .carousel::-webkit-scrollbar {
-  display: none; /* Hide scrollbar for a cleaner look */
+  display: none; 
 }
 
 .carousel-buttons {
@@ -55,20 +55,19 @@
   }
 }
 
-/* Hide the buttons on smaller screens */
 @media (max-width: 768px) {
   .carousel-buttons {
       display: none;
   }
 
   .carousel {
-      overflow-x: auto; /* Make sure users can scroll horizontally on mobile */
-      -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS devices */
+      overflow-x: auto; 
+      -webkit-overflow-scrolling: touch; 
   }
 
   .carousel img {
       flex-shrink: 0;
-      width: 80vw; /* Images take up 80% of the viewport width */
-      object-fit: cover; /* Ensures the images are nicely cropped */
+      width: 80vw; 
+      object-fit: cover; 
   }
 }
