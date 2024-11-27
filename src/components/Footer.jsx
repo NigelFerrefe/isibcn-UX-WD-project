@@ -33,8 +33,10 @@ function Footer() {
             <br />
             <div className="contact-container">
               <h3>Contacto</h3>
+              <br />
               <p>+34 656 316 346</p>
-              <a href="mailto:info@isi-bcn.com">info@isi-bcn.com</a>
+              <br />
+              <a className="mail" href="mailto:info@isi-bcn.com">info@isi-bcn.com</a>
             <br />
             </div>
             <p className="developed">Developed by</p>
