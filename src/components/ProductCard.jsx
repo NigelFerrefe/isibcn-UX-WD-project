@@ -37,7 +37,7 @@ function ProductsCard({
         <h4>{name}</h4>
         <h4>{price}.00 €</h4>
         <p>{description}</p>
-        <h5>El proceso</h5>
+        <h5>EL proceso</h5>
       </div>
       <div className="container-process">
         {images.map((image, index) => (
