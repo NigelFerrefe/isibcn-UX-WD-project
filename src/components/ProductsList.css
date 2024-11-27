@@ -13,3 +13,62 @@
     letter-spacing: 1px;
   }
 }
+
+.carousel {
+  display: flex;
+  overflow-x: auto; /* Allows horizontal scrolling */
+  scroll-behavior: smooth;
+  gap: 1rem; /* Add a small gap between images */
+}
+
+.carousel::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for a cleaner look */
+}
+
+.carousel-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  gap: 1rem;
+
+  button {
+      border: 2px solid var(--color-subtitle);
+      border-radius: 8px;
+      color: var(--color-subtitle);
+      background-color: transparent;
+      font-size: 1.2rem;
+      padding: 0.6rem 1.2rem;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+          background-color: var(--color-subtitle);
+          color: var(--color-background);
+      }
+
+      &:focus {
+          outline: none;
+          box-shadow: 0 0 0 3px rgba(var(--color-subtitle-rgb), 0.3);
+      }
+  }
+}
+
+/* Hide the buttons on smaller screens */
+@media (max-width: 768px) {
+  .carousel-buttons {
+      display: none;
+  }
+
+  .carousel {
+      overflow-x: auto; /* Make sure users can scroll horizontally on mobile */
+      -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS devices */
+  }
+
+  .carousel img {
+      flex-shrink: 0;
+      width: 80vw; /* Images take up 80% of the viewport width */
+      object-fit: cover; /* Ensures the images are nicely cropped */
+  }
+}

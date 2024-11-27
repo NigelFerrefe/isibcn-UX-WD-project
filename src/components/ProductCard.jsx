@@ -12,7 +12,7 @@ function ProductsCard({
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % main_image.length);
   };
-  
+
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? main_image.length - 1 : prevIndex - 1
@@ -24,31 +24,27 @@ function ProductsCard({
   const handleDecrement = () => setNumber(number - 1);
   const handleAddChart = () => {
     setAddChart(!addChart);
-    setToggleText(addChart ? "AÑADIR EN EL CARRITO" : "EN EL CARRITO")
-    setNumber(0)
-    console.log(addChart ? "Product deleted to chart list" : "Product added to chart list");
-    
+    setToggleText(addChart ? "AÑADIR EN EL CARRITO" : "EN EL CARRITO");
+    setNumber(0);
+    console.log(
+      addChart ? "Product deleted to chart list" : "Product added to chart list"
+    );
   };
 
   return (
-    
-
     <article className="container-card">
-      
       <div className="carousel">
         <img
-        className="carousel-ring"
-        src={main_image[currentIndex]}
-        alt={`Main image ${currentIndex + 1} of carousel`}
+          className="carousel-pictures"
+          src={main_image[currentIndex]}
+          alt={`Main image ${currentIndex + 1} of carousel`}
         />
       </div>
 
       <div className="carousel-buttons">
-        <button onClick={handlePrev}>Previous</button>
-        <button onClick={handleNext}>Next</button>
+        <button onClick={handlePrev}>Siguiente</button>
+        <button onClick={handleNext}>Anterior</button>
       </div>
-
-
 
       {/*<img className="main-image" src={main_image} alt="main image" />*/}
       <div className="container-details">

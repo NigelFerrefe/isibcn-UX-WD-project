@@ -1,6 +1,6 @@
 //import jewelsData from "../data/Jewels.json";
 import ProductsCard from "./ProductCard";
-import "./ProductsList.css"
+import "./ProductsList.css";
 import redRingImage from "../assets/Red-ring-main.png";
 import braceletImage from "../assets/Bracelet-main.png";
 import ringImage from "../assets/Ring-main.png";
@@ -23,12 +23,11 @@ import earing2 from "../assets/Earing-2.png";
 import ring from "../assets/Ring-carousel.png";
 import rings from "../assets/Rings.png";
 
-
 const jewelsData = [
   {
     id: 1,
     name: "Anillo Flash",
-    main_image: [redRingImage, ring, rings ],
+    main_image: [redRingImage, ring, rings],
     price: 43,
     images: [
       redRingProcess1,
