@@ -16,12 +16,13 @@ import ringProcess1 from "../assets/Ring-1.png";
 import ringProcess2 from "../assets/Ring-2.png";
 import ringProcess3 from "../assets/Ring-3.png";
 import ringProcess4 from "../assets/Ring-4.png";
+import 
 
 const jewelsData = [
   {
     id: 1,
     name: "Anillo Flash",
-    main_image: [redRingImage,],
+    main_image: [redRingImage, Ring, rings],
     price: 43,
     images: [
       redRingProcess1,
@@ -35,7 +36,7 @@ const jewelsData = [
   {
     id: 2,
     name: "Pulsera Knotted",
-    main_image: braceletImage,
+    main_image: [braceletImage, bracelet2, bracelet3],
     price: 12,
     images: [
       braceletProcess1,
@@ -49,7 +50,7 @@ const jewelsData = [
   {
     id: 3,
     name: "Pendiente Boton",
-    main_image: ringImage,
+    main_image: [ringImage, earing, earing2],
     price: 39,
     images: [ringProcess1, ringProcess2, ringProcess3, ringProcess4],
     description:
