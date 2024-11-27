@@ -8,8 +8,22 @@
   text-align: center;
 }
 
+a {
+    font-family: "Inter", sans-serif, "DM Sans";
+    text-decoration: none;
+    color: black;
+}
 
-.mail {
+.call-icon {
+    vertical-align: middle;
+}
+
+.email-icon {
+    vertical-align: middle;
+}
+
+
+.email {
     text-decoration: underline;
     color: black;
     font-size: 12px;
@@ -27,7 +41,10 @@ h2 {
     font-size: 18px;
 }
 
-p {
+p, a {
     font-size: 12px;
 }
 
+.tienda-sarria-link{
+    color: black;
+}
