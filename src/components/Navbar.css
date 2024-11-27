@@ -1,0 +1,19 @@
+
+nav {
+    background-color: var(--background-color-seconday);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem;
+    width: 100%;
+}
+
+nav .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav-icons {
+    margin-left: auto;
+}

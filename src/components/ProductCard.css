@@ -1,15 +1,69 @@
 .container-card {
-    border: 1px solid black;
     display: flex;
     flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding: 2rem;
+    border: 1px solid forestgreen;
+    .main-image {
+        width: 15rem;
+    }
+    
 }
-.process-imgs {
-    border: 1px solid red;
+.container-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    h4 {
+        color: var(--color-subtitle);
+        font-size: 1.4rem;
+        font-weight: 400;
+    }
+    h5 {
+        color: var(--color-subtitle);
+        font-size: 1.2rem;
+        font-weight: 400;
+        padding-left: 1rem;
+    }
+}
+.container-process {
     display: flex;
     flex-direction: row;
+    gap: 1rem;
+    margin-top: 0.8rem;
+    padding: 1rem;
+    .process-img {
+        width: 4rem;
+        border-radius: 8px;
+    }
 }
 .container-btns {
-    border: 1px solid green;
+    border: 2px solid var(--color-subtitle);
+    border-radius: 14px;
+    color: var(--color-subtitle);
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    width: 5rem;
+    
+    
+    button {
+        background-color: transparent;
+        border: none;
+    }
+    
 }
+.add-chart {
+    background-color: var(--color-subtitle);
+    color: #FFF;
+    border: none;
+    border-radius: 14px;
+    width: 15rem;
+    height: 1.5rem;
+    margin: 1rem;
+}
+
+/*----------QUERY DESKTOP------------------*/
