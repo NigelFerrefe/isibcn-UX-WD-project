@@ -1,34 +1,41 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./ProductCard.css";
+import plusIcon from "../assets/plusicon.svg";
+import minusIcon from "../assets/minusicon.svg";
+import emptyBagIcon from "../assets/EMPTYBAG.svg";
+import fullBagIcon from "../assets/FULLBAG.svg";
 
 function ProductsCard({
   jewel: { name, main_image, price, description, images },
+  addChart,
+  setAddChart,
+  chartCount,
+  setChartCount,
+  bagIcon,
+  setBagIcon,
+  updateBagIcon,
 }) {
   const [number, setNumber] = useState(0);
-  const [addChart, setAddChart] = useState();
-  const [toggleText, setToggleText] = useState("AÑADIR EN EL CARRITO");
+  
+  const [toggleText, setToggleText] = useState("Añadir en el carrito");
 
   const handleIncrement = () => setNumber(number + 1);
 
-  const handleDecrement = () => setNumber(number - 1);
+  const handleDecrement = () => number > 0 && setNumber(number - 1);
+
+
   const handleAddChart = () => {
-    // if (addChart) {
-    //   setAddChart(false);
-    //   setToggleText("AÑADIR EN EL CARRITO");
-    //   setNumber(0);
-    //   console.log("Product deleted to chart list");
-    // } else {
-    //   setAddChart(true);
-    //   setToggleText("EN EL CARRITO");
-    //   setNumber(0);
-    //   console.log("Product added to chart list");
-    // }
+    setChartCount(chartCount + number);
+    updateBagIcon();
     setAddChart(!addChart);
-    setToggleText(addChart ? "AÑADIR EN EL CARRITO" : "EN EL CARRITO")
-    setNumber(0)
-    console.log(addChart ? "Product deleted to chart list" : "Product added to chart list");
-    
+    setToggleText(addChart ? "Añadir en el carrito" : "En el carrito");
+    // setNumber(0);
   };
+
+  
+  useEffect(() => {
+    setBagIcon(chartCount === 0 ? emptyBagIcon : fullBagIcon);
+  }, [chartCount, setBagIcon]);
 
   return (
     <article className="container-card">
@@ -50,12 +57,19 @@ function ProductsCard({
         ))}
       </div>
       <div className="container-btns">
-        <button onClick={handleDecrement}>-</button>
+        <button onClick={handleDecrement}>
+          <img src={minusIcon} alt="minus-icon" className="icons" />
+        </button>
         <p>{number}</p>
-        <button onClick={handleIncrement}>+</button>
+        <button onClick={handleIncrement}>
+          <img src={plusIcon} alt="plus-icon" className="icons" />
+        </button>
       </div>
       <div>
-        <button className="add-chart" onClick={handleAddChart}>
+        <button
+          className={addChart ? "toggle" : "add-chart"}
+          onClick={handleAddChart}
+        >
           {toggleText}
         </button>
       </div>
