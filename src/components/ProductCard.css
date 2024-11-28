@@ -75,7 +75,7 @@
   height: 1.5rem;
   margin: 1.5rem;
   height: 3rem;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   letter-spacing: 1px;
 }
 
@@ -88,7 +88,7 @@
   height: 1.5rem;
   margin: 1.5rem;
   height: 3rem;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   letter-spacing: 1px;
 }
 .icons {
@@ -146,5 +146,33 @@
         width: 8rem;
       }
     }
+  }
+  .add-chart {
+    background-color: var(--color-subtitle);
+    color: #fff;
+    border: none;
+    border-radius: 1.4rem;
+    width: 18rem;
+    height: 1.5rem;
+    margin: 1.5rem;
+    height: 3rem;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+  }
+  
+  .toggle {
+    background-color: #3c502b;
+    color: #fff;
+    border: 3px solid #3c502b;
+    border-radius: 1.4rem;
+    width: 18rem;
+    height: 1.5rem;
+    margin: 1.5rem;
+    height: 3rem;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+  }
+  .icons {
+    width: 2rem;
   }
 }
