@@ -59,6 +59,10 @@
     background-color: transparent;
     border: none;
   }
+  button:hover {
+    background-color: transparent;
+    border: none;
+  }
   img {
     width: 1.6rem;
   }
