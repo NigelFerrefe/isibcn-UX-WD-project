@@ -21,17 +21,15 @@ function ProductsCard({
   const [currentIndex, setCurrentIndex] = useState(0);
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
-  const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 768); // Default to mobile view
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 768);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsDesktop(window.innerWidth >= 768); // Update isMobile state
+      setIsDesktop(window.innerWidth >= 768);
     };
 
-    // Attach the resize event listener
     window.addEventListener("resize", handleResize);
 
-    // Clean up the event listener on component unmount
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
