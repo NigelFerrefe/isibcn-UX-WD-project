@@ -16,13 +16,13 @@ function ProductsCard({
   updateBagIcon,
 }) {
   const [number, setNumber] = useState(0);
-
   const [toggleText, setToggleText] = useState("Añadir en el carrito");
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
 
   const handleIncrement = () => setNumber(number + 1);
-
   const handleDecrement = () => number > 0 && setNumber(number - 1);
-  const [currentIndex, setCurrentIndex] = useState(0);
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) =>
@@ -35,25 +35,62 @@ function ProductsCard({
       prevIndex === 0 ? main_image.length - 1 : prevIndex - 1
     );
   };
+
   const handleAddChart = () => {
     setChartCount(chartCount + number);
     updateBagIcon();
     setAddChart(!addChart);
     setToggleText(addChart ? "Añadir en el carrito" : "En el carrito");
-    // setNumber(0);
   };
 
   useEffect(() => {
     setBagIcon(chartCount === 0 ? emptyBagIcon : fullBagIcon);
   }, [chartCount, setBagIcon]);
 
+  const handleTouchStart = (e) => {
+    setTouchStart(e.targetTouches[0].clientX); 
+  };
+
+  const handleTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX); 
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return; 
+
+    const swipeDistance = touchStart - touchEnd;
+    const threshold = 50; 
+
+    if (swipeDistance > threshold) {
+      handleNext();
+    }
+
+    if (swipeDistance < -threshold) {
+      handlePrev();
+    }
+
+    setTouchStart(null);
+    setTouchEnd(null);
+  };
+
+  const handleImageClick = () => {
+    handleNext();
+  };
+
   return (
     <article className="container-card">
-      <div className="carousel">
+      <div
+        className="carousel"
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
         <img
           className="carousel-pictures"
           src={main_image[currentIndex]}
           alt={`Main image ${currentIndex + 1} of carousel`}
+          onClick={handleImageClick}
+          style={{ cursor: "pointer" }}
         />
       </div>
 
@@ -62,13 +99,13 @@ function ProductsCard({
         <button onClick={handleNext}>Siguiente</button>
       </div>
 
-      {/*<img className="main-image" src={main_image} alt="main image" />*/}
       <div className="container-details">
         <h4>{name}</h4>
         <h4>{price}.00 €</h4>
         <p>{description}</p>
         <h5>El proceso</h5>
       </div>
+
       <div className="container-process">
         {images.map((image, index) => (
           <img
@@ -79,6 +116,7 @@ function ProductsCard({
           />
         ))}
       </div>
+
       <div className="container-btns">
         <button onClick={handleDecrement}>
           <img src={minusIcon} alt="minus-icon" className="icons" />
@@ -88,6 +126,7 @@ function ProductsCard({
           <img src={plusIcon} alt="plus-icon" className="icons" />
         </button>
       </div>
+
       <div>
         <button
           className={addChart ? "toggle" : "add-chart"}
