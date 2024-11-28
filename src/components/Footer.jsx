@@ -55,7 +55,6 @@ function Footer() {
             <br />
               <h3>Contacto</h3>
             <div className="contact-container">
-              <br />
 
               <a href="tel:+34656316346" className="call-link">
                 <img className="call-icon" src={callpic} alt="Call Icon" />
@@ -66,7 +65,6 @@ function Footer() {
                 <img className="email-icon" src={mailpic} alt="" />
                 info@isi-bcn.com
               </a>
-              <br />
             </div>
             <div className="footer-copyright">
               <small className="developed">
