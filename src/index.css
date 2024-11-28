@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  max-width: 100%;
 }
 
 #root {
@@ -13,7 +14,7 @@
   --color-text: #000;
   --font-primary: "Inter", sans-serif;
   --font-secondary: "DM Sans", sans-serif;
-  
+  overflow-x: hidden;
 }
 
 h1,h2,h3,h4,h5,h6 {
