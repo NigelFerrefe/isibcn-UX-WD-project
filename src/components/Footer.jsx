@@ -6,8 +6,8 @@ function Footer() {
     <>
       <footer className="footer">
         <div className="footer-container">
-          <div className="stores-container">
             <h1>¿Dónde Encontrarnos? </h1>
+          <div className="stores-container">
             <br />
             <div className="tienda-via-augusta">
               <h2>TIENDA VÍA AUGUSTA</h2>
@@ -47,9 +47,10 @@ function Footer() {
                 695 342 649
               </a>
             </div>
+          </div>
             <br />
-            <div className="contact-container">
               <h3>Contacto</h3>
+            <div className="contact-container">
               <br />
 
               <a href="tel:+34656316346" className="call-link">
@@ -74,7 +75,6 @@ function Footer() {
                 Developed by Diego, Kara & Nigel
               </small>
             </div>
-          </div>
         </div>
       </footer>
     </>
