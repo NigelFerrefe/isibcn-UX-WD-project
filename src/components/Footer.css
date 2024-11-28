@@ -1,3 +1,21 @@
+.footer {
+    flex-direction: column;
+    font-family: "Inter", sans-serif, "DM Sans";
+  background-color: #ebe5df;
+  --color-title: #8a6e4e;
+  --color-subtitle: #503f2b;
+  --color-text: #000;
+  text-align: center;
+  align-items: center;
+}
+
+.tienda-sarria-link,
+.tienda-augusta-link,
+.tienda-gracia-link{
+    color: black;
+    text-decoration: none;
+}
+
 .footer-container {
     text-align: center;
     padding: 2rem 1rem;
@@ -8,13 +26,7 @@
     --color-subtitle: #503f2b;
     --color-text: #000;
     text-align: center;
-    
-}
-
-h1{
-    margin-right: 1rem;
-
-}
+  }
   
   .stores-container {
     display: flex;
@@ -25,15 +37,9 @@ h1{
     padding: 2rem; 
     margin: 0 auto; 
     box-sizing: border-box; 
-    margin-right: 8rem;
+    margin-right: 8rem; 
   }
-  
-  .tienda-sarria-link,
-  .tienda-augusta-link,
-  .tienda-gracia-link {
-    text-decoration: none;
-    color: black;
-  }
+
   
   .contact-container {
     display: flex; 
@@ -55,7 +61,6 @@ h1{
     color: inherit; 
   }
   
-  
   .footer-copyright {
     display: flex; 
     justify-content: center; 
@@ -64,18 +69,21 @@ h1{
     font-size: 0.875rem;
     text-align: center;
     color: #555; 
-  }
-  
-  .copyright,
-  .developed {
-    display: inline-block; 
-    margin: 0; 
-  }
-  
-  
-  
+  }  
 
 @media (max-width: 390px) {
+
+    @media (max-width: 390px) {
+        .stores-container {
+          display: flex; 
+          flex-direction: column; 
+          align-items: center; 
+          gap: 1rem; 
+          padding: 1rem; 
+          margin-right: 0rem;
+        }
+      }
+      
 .footer {
     flex-direction: column;
     font-family: "Inter", sans-serif, "DM Sans";
@@ -84,13 +92,9 @@ h1{
   --color-subtitle: #503f2b;
   --color-text: #000;
   text-align: center;
+  align-items: center;
 }
 
-a {
-    font-family: "Inter", sans-serif, "DM Sans";
-    text-decoration: none;
-    color: black;
-}
 
 .call-icon {
     vertical-align: middle;
@@ -123,16 +127,19 @@ p, a {
     font-size: 12px;
 }
 
-.tienda-sarria-link{
+.tienda-sarria-link,
+.tienda-augusta-link,
+.tienda-gracia-link{
     color: black;
+    text-decoration: none;
 }
 
 .footer-copyright {
     display: flex;
-    flex-direction: row;
-    justify-content:space-evenly;
-    text-align: center;
-    padding-top: 1rem;
-    font-size: 0.8rem;
-}
+    flex-direction: column; 
+    align-items: center; 
+    gap: 0.5rem; 
+    text-align: center; 
+    padding-top: 1rem; 
+  }
 }
