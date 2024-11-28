@@ -41,17 +41,63 @@ function ProductsCard({
     setChartCount(chartCount + number);
     updateBagIcon();
     setAddChart(!addChart);
-    setToggleText(addChart ? "Añadir en el carrito" : "En el carrito");
-    // setNumber(0);
+    setToggleText(addChart ? "Añadir en el carrito" : "Añadido en el carrito");
+    setNumber(0);
+    setTimeout(() => {
+      setToggleText("Añadir en el carrito");
+      setAddChart(false);
+    }, 3000);
+  };
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const showPopup = (image) => {
+    setSelectedImage(image);
+    setIsPopupVisible(true);
   };
 
+  const hidePopup = () => {
+    setIsPopupVisible(false);
+    setSelectedImage(null);
+  };
   useEffect(() => {
     setBagIcon(chartCount === 0 ? emptyBagIcon : fullBagIcon);
   }, [chartCount, setBagIcon]);
 
+  const handleTouchStart = (e) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+
+    const swipeDistance = touchStart - touchEnd;
+    const threshold = 50;
+
+    if (swipeDistance > threshold) {
+      handleNext();
+    }
+
+    if (swipeDistance < -threshold) {
+      handlePrev();
+    }
+
+    setTouchStart(null);
+    setTouchEnd(null);
+  };
+
+  const handleImageClick = () => {
+    handleNext();
+  };
   return (
     <article className="container-card">
-      {isPopupVisible && <ExpandImage selectedImage={selectedImage} hidePopup={hidePopup} />}
+      {isPopupVisible && (
+        <ExpandImage selectedImage={selectedImage} hidePopup={hidePopup} />
+      )}
       <div
         className="carousel"
         onTouchStart={handleTouchStart}
