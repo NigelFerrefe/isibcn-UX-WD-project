@@ -52,10 +52,10 @@ function Footer() {
               <h3>Contacto</h3>
               <br />
 
-              <p>
-                <img className="call-icon" src={callpic} alt="" />
+              <a href="tel:+34656316346" className="call-link">
+                <img className="call-icon" src={callpic} alt="Call Icon" />
                 +34 656 316 346
-              </p>
+              </a>
               <br />
               <a className="email-container" href="mailto:info@isi-bcn.com">
                 <img className="email-icon" src={mailpic} alt="" />
@@ -70,7 +70,9 @@ function Footer() {
               <small className="developed">
                 Designed by Gabi, Laura, Leti, Isa & Mario
               </small>
-              <small className="developed">Developed by Diego, Kara & Nigel</small>
+              <small className="developed">
+                Developed by Diego, Kara & Nigel
+              </small>
             </div>
           </div>
         </div>
