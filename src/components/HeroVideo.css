@@ -1,6 +1,6 @@
 .hero-container {
     position: relative;
-    height: 90vh; 
+    height: 95vh; 
     width: 100%;
     overflow: hidden;
 }
@@ -34,9 +34,9 @@
         animation: bounce 2s infinite;
    }
 
-@media (max-width: 430px) {
+@media (max-width: 390px) {
     .hero-container {
-        height: 85vh; 
+        height: 90vh; 
     }
 
     .hero-video {
@@ -46,7 +46,7 @@
     .scroll-button {
         position: absolute;
         display: block;
-        bottom: 5rem;
+        bottom: 2rem;
         left: 50%;
         transform: translateX(-50%);
         background: none;
