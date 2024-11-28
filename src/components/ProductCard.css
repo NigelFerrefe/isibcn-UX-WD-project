@@ -1,69 +1,94 @@
 .container-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
-    padding: 2rem;
-    border: 1px solid forestgreen;
-    .main-image {
-        width: 15rem;
-    }
-    
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  padding: 2rem;
+  .main-image {
+    width: 15rem;
+  }
 }
 .container-details {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 
-    h4 {
-        color: var(--color-subtitle);
-        font-size: 1.4rem;
-        font-weight: 400;
-    }
-    h5 {
-        color: var(--color-subtitle);
-        font-size: 1.2rem;
-        font-weight: 400;
-        padding-left: 1rem;
-    }
+  h4 {
+    color: var(--color-subtitle);
+    font-size: 1.6rem;
+    font-weight: 400;
+  }
+  h5 {
+    color: var(--color-subtitle);
+    font-size: 1.4rem;
+    font-weight: 400;
+    padding-left: 1rem;
+  }
+  p{
+    font-size: 1rem;
+  }
 }
 .container-process {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-    margin-top: 0.8rem;
-    padding: 1rem;
-    .process-img {
-        width: 4rem;
-        border-radius: 8px;
-    }
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin-top: 0.8rem;
+  padding: 1rem;
+  .process-img {
+    width: 4.6rem;
+    border-radius: 8px;
+  }
 }
 .container-btns {
-    border: 2px solid var(--color-subtitle);
-    border-radius: 14px;
-    color: var(--color-subtitle);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    text-align: center;
-    width: 5rem;
+  border: 2px solid var(--color-subtitle);
+  border-radius: 1.4rem;
+  color: var(--color-subtitle);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  width: 11rem;
+  height: 4rem;
+  margin-top: 0.8rem;
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.25); /*Do we need this? ask UX/UI*/
+
+  button {
+    background-color: transparent;
+    border: none;
     
-    
-    button {
-        background-color: transparent;
-        border: none;
-    }
-    
+  }
+  p {
+    font-size: 2.6rem;
+  }
 }
 .add-chart {
-    background-color: var(--color-subtitle);
-    color: #FFF;
-    border: none;
-    border-radius: 14px;
-    width: 15rem;
-    height: 1.5rem;
-    margin: 1rem;
+  background-color: var(--color-subtitle);
+  color: #fff;
+  border: none;
+  border-radius: 1.4rem;
+  width: 15rem;
+  height: 1.5rem;
+  margin: 1.5rem;
+  height: 3rem;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+.toggle {
+  background-color: #fff;
+  color: var(--color-subtitle);
+  border: 3px solid var(--color-subtitle);
+  border-radius: 1.4rem;
+  width: 15rem;
+  height: 1.5rem;
+  margin: 1.5rem;
+  height: 3rem;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+.icons {
+    width: 2rem;
 }
 
 /*----------QUERY DESKTOP------------------*/

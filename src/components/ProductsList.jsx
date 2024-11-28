@@ -1,4 +1,5 @@
 //import jewelsData from "../data/Jewels.json";
+
 import ProductsCard from "./ProductCard";
 import "./ProductsList.css";
 import redRingImage from "../assets/Red-ring-main.png";
@@ -63,7 +64,8 @@ const jewelsData = [
   },
 ];
 
-function ProductsList() {
+function ProductsList({addChart, setAddChart, chartCount, setChartCount, bagIcon,
+  setBagIcon, updateBagIcon}) {
   return (
     <>
       <div className="container-products">
@@ -71,7 +73,7 @@ function ProductsList() {
         <section>
           {jewelsData.map((jewel) => (
             <article key={jewel.id}>
-              <ProductsCard jewel={jewel} />
+              <ProductsCard jewel={jewel} addChart={addChart} setAddChart={setAddChart} chartCount={chartCount} setChartCount={setChartCount} bagIcon={bagIcon} setBagIcon={setBagIcon} updateBagIcon={updateBagIcon}/>
             </article>
           ))}
         </section>
