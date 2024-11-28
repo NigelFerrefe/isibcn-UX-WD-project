@@ -25,13 +25,9 @@ function ProductsCard({
 
   useEffect(() => {
     const handleResize = () => {
-      setIsDesktop(window.innerWidth >= 768); // Update isMobile state
+      setIsDesktop(window.innerWidth >= 768);
     };
-
-    // Attach the resize event listener
     window.addEventListener("resize", handleResize);
-
-    // Clean up the event listener on component unmount
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
@@ -73,6 +69,7 @@ function ProductsCard({
     setIsPopupVisible(false);
     setSelectedImage(null);
   };
+
   useEffect(() => {
     setBagIcon(chartCount === 0 ? emptyBagIcon : fullBagIcon);
   }, [chartCount, setBagIcon]);
@@ -115,9 +112,25 @@ function ProductsCard({
           )}
           <div
             className="carousel"
-            onTouchStart={handleTouchStart}
-            onTouchMove={handleTouchMove}
-            onTouchEnd={handleTouchEnd}
+            onTouchStart={(e) => setTouchStart(e.targetTouches[0]?.clientX)}
+            onTouchMove={(e) => setTouchEnd(e.targetTouches[0]?.clientX)}
+            onTouchEnd={() => {
+              if (!touchStart || !touchEnd) return;
+
+              const swipeDistance = touchStart - touchEnd;
+              const threshold = 50;
+
+              if (swipeDistance > threshold) {
+                handleNext();
+              }
+
+              if (swipeDistance < -threshold) {
+                handlePrev();
+              }
+
+              setTouchStart(null);
+              setTouchEnd(null);
+            }}
           >
             <img
               className="carousel-pictures"
@@ -172,12 +185,35 @@ function ProductsCard({
             <ExpandImage selectedImage={selectedImage} hidePopup={hidePopup} />
           )}
 
-          <div className="carousel">
-            <img
-              className="carousel-pictures"
-              src={main_image[currentIndex]}
-              alt={`Main image ${currentIndex + 1} of carousel`}
-            />
+          <div
+            className="carousel"
+            onTouchStart={(e) => setTouchStart(e.targetTouches[0]?.clientX)}
+            onTouchMove={(e) => setTouchEnd(e.targetTouches[0]?.clientX)}
+            onTouchEnd={() => {
+              if (!touchStart || !touchEnd) return;
+
+              const swipeDistance = touchStart - touchEnd;
+              const threshold = 50;
+
+              if (swipeDistance > threshold) {
+                handleNext();
+              }
+
+              if (swipeDistance < -threshold) {
+                handlePrev();
+              }
+
+              setTouchStart(null);
+              setTouchEnd(null);
+            }}
+          >
+        <img
+          className="carousel-pictures"
+          src={main_image[currentIndex]}
+          alt={`Main image ${currentIndex + 1} of carousel`}
+          onClick={handleImageClick} // Works for both desktop and mobile
+          style={{ cursor: "pointer" }}
+        />
           </div>
 
           <div className="container-details">
