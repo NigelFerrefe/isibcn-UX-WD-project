@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./ProductCard.css";
+import ExpandImage from "../components/ExpandImage.jsx";
 import plusIcon from "../assets/plusicon.svg";
 import minusIcon from "../assets/minusicon.svg";
 import emptyBagIcon from "../assets/EMPTYBAG.svg";
@@ -41,44 +42,16 @@ function ProductsCard({
     updateBagIcon();
     setAddChart(!addChart);
     setToggleText(addChart ? "Añadir en el carrito" : "En el carrito");
+    // setNumber(0);
   };
 
   useEffect(() => {
     setBagIcon(chartCount === 0 ? emptyBagIcon : fullBagIcon);
   }, [chartCount, setBagIcon]);
 
-  const handleTouchStart = (e) => {
-    setTouchStart(e.targetTouches[0].clientX); 
-  };
-
-  const handleTouchMove = (e) => {
-    setTouchEnd(e.targetTouches[0].clientX); 
-  };
-
-  const handleTouchEnd = () => {
-    if (!touchStart || !touchEnd) return; 
-
-    const swipeDistance = touchStart - touchEnd;
-    const threshold = 50; 
-
-    if (swipeDistance > threshold) {
-      handleNext();
-    }
-
-    if (swipeDistance < -threshold) {
-      handlePrev();
-    }
-
-    setTouchStart(null);
-    setTouchEnd(null);
-  };
-
-  const handleImageClick = () => {
-    handleNext();
-  };
-
   return (
     <article className="container-card">
+      {isPopupVisible && <ExpandImage selectedImage={selectedImage} hidePopup={hidePopup} />}
       <div
         className="carousel"
         onTouchStart={handleTouchStart}
@@ -94,10 +67,10 @@ function ProductsCard({
         />
       </div>
 
-      <div className="carousel-buttons">
+      {/* <div className="carousel-buttons">
         <button onClick={handlePrev}>Anterior</button>
         <button onClick={handleNext}>Siguiente</button>
-      </div>
+      </div> */}
 
       <div className="container-details">
         <h4>{name}</h4>
@@ -110,6 +83,7 @@ function ProductsCard({
         {images.map((image, index) => (
           <img
             className="process-img"
+            onClick={() => showPopup(image)}
             key={index}
             src={image}
             alt={`${image} process`}
@@ -129,7 +103,7 @@ function ProductsCard({
 
       <div>
         <button
-          className={addChart ? "toggle" : "add-chart"}
+          className={!addChart ? "add-chart" : "toggle"}
           onClick={handleAddChart}
         >
           {toggleText}
