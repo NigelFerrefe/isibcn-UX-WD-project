@@ -24,7 +24,7 @@
     font-weight: 400;
     padding-left: 1rem;
   }
-  p{
+  p {
     font-size: 1rem;
   }
 }
@@ -58,7 +58,6 @@
   button {
     background-color: transparent;
     border: none;
-    
   }
   img {
     width: 1.6rem;
@@ -69,7 +68,7 @@
 }
 .add-chart {
   background-color: var(--color-subtitle);
-  color: #FFF;
+  color: #fff;
   border: none;
   border-radius: 1.4rem;
   width: 15rem;
@@ -81,9 +80,9 @@
 }
 
 .toggle {
-  background-color: #3C502B;
-  color: #FFF;
-  border: 3px solid #3C502B;
+  background-color: #3c502b;
+  color: #fff;
+  border: 3px solid #3c502b;
   border-radius: 1.4rem;
   width: 15rem;
   height: 1.5rem;
@@ -93,37 +92,59 @@
   letter-spacing: 1px;
 }
 .icons {
-    width: 2rem;
+  width: 2rem;
 }
 
 /*----------QUERY DESKTOP------------------*/
 
 @media (min-width: 768px) {
-  .container-card{
-    border: 1px solid red;
+  .container-card {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    align-content: center;
+    width: 100%;
+    .carousel {
+      width: 24rem;
+    }
 
-    
-    
-
-    /* .main-image {
-      width: 30rem;
-    } */
   }
   .container-details {
-    border: 1px solid green;
-    width: 50rem;
-  }
-  .container-process {
-    display: flex;
-    flex-direction: row;
-    border: 1px solid orange;
-    
-  }
-  .container-add-chart {
     display: flex;
     flex-direction: column;
+    align-content: space-between;
+
+    width: 30rem;
+    padding: 2rem 1rem;
+
+    .all-btns {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  .container-process-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 30rem;
+    padding: 1.5rem;
+    h4 {
+      font-size: 1.6rem;
+      color: var(--color-subtitle);
+      font-weight: 400;
+    }
+
+    .container-process {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-content: start;
+      flex-wrap: wrap;
+      gap: 1.6rem;
+      img {
+        width: 8rem;
+      }
+    }
   }
 }

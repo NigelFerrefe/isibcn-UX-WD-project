@@ -21,6 +21,19 @@ function ProductsCard({
   const [currentIndex, setCurrentIndex] = useState(0);
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 768); // Default to mobile view
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 768); // Update isMobile state
+    };
+
+    // Attach the resize event listener
+    window.addEventListener("resize", handleResize);
+
+    // Clean up the event listener on component unmount
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const handleIncrement = () => setNumber(number + 1);
   const handleDecrement = () => number > 0 && setNumber(number - 1);
@@ -94,68 +107,120 @@ function ProductsCard({
     handleNext();
   };
   return (
-    <article className="container-card">
-      {isPopupVisible && (
-        <ExpandImage selectedImage={selectedImage} hidePopup={hidePopup} />
+    <>
+      {!isDesktop ? (
+        <article className="container-card">
+          {isPopupVisible && (
+            <ExpandImage selectedImage={selectedImage} hidePopup={hidePopup} />
+          )}
+          <div
+            className="carousel"
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+          >
+            <img
+              className="carousel-pictures"
+              src={main_image[currentIndex]}
+              alt={`Main image ${currentIndex + 1} of carousel`}
+              onClick={handleImageClick}
+              style={{ cursor: "pointer" }}
+            />
+          </div>
+
+          <div className="container-details">
+            <h4>{name}</h4>
+            <h4>{price}.00 €</h4>
+            <p>{description}</p>
+            <h5>El proceso</h5>
+          </div>
+
+          <div className="container-process">
+            {images.map((image, index) => (
+              <img
+                className="process-img"
+                onClick={() => showPopup(image)}
+                key={index}
+                src={image}
+                alt={`${image} process`}
+              />
+            ))}
+          </div>
+
+          <div className="container-btns">
+            <button onClick={handleDecrement}>
+              <img src={minusIcon} alt="minus-icon" className="icons" />
+            </button>
+            <p>{number}</p>
+            <button onClick={handleIncrement}>
+              <img src={plusIcon} alt="plus-icon" className="icons" />
+            </button>
+          </div>
+
+          <div>
+            <button
+              className={!addChart ? "add-chart" : "toggle"}
+              onClick={handleAddChart}
+            >
+              {toggleText}
+            </button>
+          </div>
+        </article>
+      ) : (
+        <article className="container-card">
+          {isPopupVisible && (
+            <ExpandImage selectedImage={selectedImage} hidePopup={hidePopup} />
+          )}
+
+          <div className="carousel">
+            <img
+              className="carousel-pictures"
+              src={main_image[currentIndex]}
+              alt={`Main image ${currentIndex + 1} of carousel`}
+            />
+          </div>
+
+          <div className="container-details">
+            <h4>{name}</h4>
+            <h4>{price}.00 €</h4>
+            <p>{description}</p>
+            <div className="all-btns">
+              <div className="container-btns">
+                <button onClick={handleDecrement}>
+                  <img src={minusIcon} alt="minus-icon" className="icons" />
+                </button>
+                <p>{number}</p>
+                <button onClick={handleIncrement}>
+                  <img src={plusIcon} alt="plus-icon" className="icons" />
+                </button>
+              </div>
+
+              <button
+                className={!addChart ? "add-chart" : "toggle"}
+                onClick={handleAddChart}
+              >
+                {toggleText}
+              </button>
+            </div>
+          </div>
+          <div className="container-process-wrap">
+            <h4>El proceso</h4>
+            <div className="container-process">
+              {images.map((image, index) => (
+                <img
+                  className="process-img"
+                  onClick={() => showPopup(image)}
+                  key={index}
+                  src={image}
+                  alt={`Process step ${index + 1}`}
+                />
+              ))}
+            </div>
+            <h4>From Rock to Ring</h4>
+          </div>
+        </article>
       )}
-      <div
-        className="carousel"
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
-      >
-        <img
-          className="carousel-pictures"
-          src={main_image[currentIndex]}
-          alt={`Main image ${currentIndex + 1} of carousel`}
-          onClick={handleImageClick}
-          style={{ cursor: "pointer" }}
-        />
-      </div>
-
-      {/* <div className="carousel-buttons">
-        <button onClick={handlePrev}>Anterior</button>
-        <button onClick={handleNext}>Siguiente</button>
-      </div> */}
-
-      <div className="container-details">
-        <h4>{name}</h4>
-        <h4>{price}.00 €</h4>
-        <p>{description}</p>
-        <h5>El proceso</h5>
-      </div>
-
-      <div className="container-process">
-        {images.map((image, index) => (
-          <img
-            className="process-img"
-            onClick={() => showPopup(image)}
-            key={index}
-            src={image}
-            alt={`${image} process`}
-          />
-        ))}
-      </div>
-
-      <div className="container-btns">
-        <button onClick={handleDecrement}>
-          <img src={minusIcon} alt="minus-icon" className="icons" />
-        </button>
-        <p>{number}</p>
-        <button onClick={handleIncrement}>
-          <img src={plusIcon} alt="plus-icon" className="icons" />
-        </button>
-      </div>
-
-      <div>
-        <button
-          className={!addChart ? "add-chart" : "toggle"}
-          onClick={handleAddChart}
-        >
-          {toggleText}
-        </button>
-      </div>
-    </article>
+    </>
   );
 }
 
