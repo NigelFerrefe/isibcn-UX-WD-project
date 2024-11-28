@@ -1,20 +1,27 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import "./Navbar.css";
 import logo from "../assets/LOGO.svg"
 
 
 
-function Navbar({chartCount, setChartCount, bagIcon, setBagIcon, updateBagIcon}) {
+function Navbar({ bagIcon }) {
 
+    const location = useLocation();
+
+    useEffect(() => {
+      if (location.pathname === "/") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    }, [location]);
 
     return (
         <nav>
-            <img className="logo" src={logo} alt="isibcn logo" />
+            <Link className="logo-link">
+                <img className="logo" src={logo} alt="isibcn logo" />
+            </Link>
             <div className="nav-icons">
-                <Link to={"/"}>
-                    <img src={bagIcon} alt="empty bag icon" />
-                </Link>
+                <img src={bagIcon} alt="empty bag icon"/>
             </div>
         </nav>
         

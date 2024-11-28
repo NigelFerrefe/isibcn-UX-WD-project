@@ -20,11 +20,7 @@ function App() {
   return (
     <>
       <Navbar
-        chartCount={chartCount}
-        setChartCount={setChartCount}
         bagIcon={bagIcon}
-        setBagIcon={setBagIcon}
-        updateBagIcon={updateBagIcon}
       />
       <Routes>
         <Route
