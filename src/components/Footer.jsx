@@ -11,7 +11,11 @@ function Footer() {
             <br />
             <div className="tienda-via-augusta">
               <h2>TIENDA VÍA AUGUSTA</h2>
-              <a className="tienda-augusta-link" href="http://surl.li/hdsior" target="blank">
+              <a
+                className="tienda-augusta-link"
+                href="http://surl.li/hdsior"
+                target="blank"
+              >
                 Vía Augusta, 117 local D <br />
                 08006 Barcelona <br />
                 656 316 346
@@ -20,7 +24,11 @@ function Footer() {
             <br />
             <div className="tienda-gracia">
               <h2>TIENDA GRACIA</h2>
-              <a className="tienda-gracia-link" href="http://surl.li/llucgy" target="blank">
+              <a
+                className="tienda-gracia-link"
+                href="http://surl.li/llucgy"
+                target="blank"
+              >
                 Travessera de Gràcia 111 <br />
                 08012 Barcelona <br />
                 656 488 801
@@ -29,7 +37,11 @@ function Footer() {
             <br />
             <div className="tienda-sarria">
               <h2>TIENDA SARRIÀ</h2>
-              <a className="tienda-sarria-link" href="http://surl.li/yeinjs" target="blank">
+              <a
+                className="tienda-sarria-link"
+                href="http://surl.li/yeinjs"
+                target="blank"
+              >
                 Pg. Reina Elisenda de Montcada 10 <br />
                 08034 Barcelona <br />
                 695 342 649
@@ -51,7 +63,15 @@ function Footer() {
               </a>
               <br />
             </div>
-            <p className="developed">Developed by</p>
+            <div className="footer-copyright">
+              <small className="copyright">
+                © {new Date().getFullYear()} All Rights Reserved.
+              </small>
+              <small className="developed">
+                Designed by Gabi, Laura, Leti, Isa & Mario
+              </small>
+              <small className="developed">Developed by Diego, Kara & Nigel</small>
+            </div>
           </div>
         </div>
       </footer>

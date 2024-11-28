@@ -16,14 +16,25 @@ function ProductsCard({
   updateBagIcon,
 }) {
   const [number, setNumber] = useState(0);
-  
+
   const [toggleText, setToggleText] = useState("Añadir en el carrito");
 
   const handleIncrement = () => setNumber(number + 1);
 
   const handleDecrement = () => number > 0 && setNumber(number - 1);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === main_image.length - 1 ? 0 : prevIndex + 1
+    );
+  };
 
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? main_image.length - 1 : prevIndex - 1
+    );
+  };
   const handleAddChart = () => {
     setChartCount(chartCount + number);
     updateBagIcon();
@@ -32,7 +43,6 @@ function ProductsCard({
     // setNumber(0);
   };
 
-  
   useEffect(() => {
     setBagIcon(chartCount === 0 ? emptyBagIcon : fullBagIcon);
   }, [chartCount, setBagIcon]);
