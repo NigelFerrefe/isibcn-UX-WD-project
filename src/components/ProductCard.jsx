@@ -19,6 +19,8 @@ function ProductsCard({
   const [number, setNumber] = useState(0);
   const [toggleText, setToggleText] = useState("Añadir en el carrito");
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
   const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 768);
 
 
