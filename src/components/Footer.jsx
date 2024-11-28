@@ -1,6 +1,7 @@
 import "./Footer.css";
 import callpic from "../assets/call.png";
 import mailpic from "../assets/mail.png";
+
 function Footer() {
   return (
     <>
@@ -11,6 +12,7 @@ function Footer() {
             <br />
             <div className="tienda-via-augusta">
               <h2>TIENDA VÍA AUGUSTA</h2>
+              <br />
               <a
                 className="tienda-augusta-link"
                 href="http://surl.li/hdsior"
@@ -24,6 +26,7 @@ function Footer() {
             <br />
             <div className="tienda-gracia">
               <h2>TIENDA GRACIA</h2>
+              <br />
               <a
                 className="tienda-gracia-link"
                 href="http://surl.li/llucgy"
@@ -37,6 +40,7 @@ function Footer() {
             <br />
             <div className="tienda-sarria">
               <h2>TIENDA SARRIÀ</h2>
+              <br />
               <a
                 className="tienda-sarria-link"
                 href="http://surl.li/yeinjs"
@@ -65,9 +69,6 @@ function Footer() {
               <br />
             </div>
             <div className="footer-copyright">
-              <small className="copyright">
-                © {new Date().getFullYear()} All Rights Reserved.
-              </small>
               <small className="developed">
                 Designed by Gabi, Laura, Leti, Isa & Mario
               </small>
@@ -75,6 +76,9 @@ function Footer() {
                 Developed by Diego, Kara & Nigel
               </small>
             </div>
+              <small className="copyright">
+                © {new Date().getFullYear()} All Rights Reserved.
+              </small>
         </div>
       </footer>
     </>

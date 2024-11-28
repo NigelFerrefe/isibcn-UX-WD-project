@@ -2,7 +2,7 @@ import video from "../assets/Video.mp4"
 import "./HeroVideo.css";
 import arrowSvg from "../assets/ARROW.svg"
 
-const HeroVideo = () => {
+function HeroVideo() {
     const handleScroll = () => {
       window.scrollTo({
         top: window.innerHeight,
