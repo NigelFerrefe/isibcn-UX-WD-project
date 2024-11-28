@@ -21,6 +21,10 @@
   gap: 1rem;
 }
 
+.carousel img{
+  border-radius: 2.5rem;
+}
+
 .carousel::-webkit-scrollbar {
   display: none; 
 }
