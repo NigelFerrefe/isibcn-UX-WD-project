@@ -23,7 +23,7 @@
    .scroll-button {
         position: absolute;
         display: block;
-        bottom: 5rem;
+        bottom: 2rem;
         left: 50%;
         transform: translateX(-50%);
         background: none;
